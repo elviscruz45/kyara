@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const objetivos = [
+  {
+    numero: '01',
+    icon: 'https://stories.freepiklabs.com/storage/34149/learning-01.svg',
+    titulo: 'Orientar sobre documentos',
+    texto: 'Orientar a todas las personas sobre los documentos de identidad y los requisitos necesarios para obtenerlos o renovarlos.',
+  },
+  {
+    numero: '02',
+    icon: 'https://stories.freepiklabs.com/storage/2275/Check-List-01.svg',
+    titulo: 'Explicar paso a paso',
+    texto: 'Explicar paso a paso cómo realizar los trámites, para que las personas puedan hacerlos con mayor facilidad, seguridad y confianza.',
+  },
+  {
+    numero: '03',
+    icon: 'https://stories.freepiklabs.com/storage/2593/ID-Card-01.svg',
+    titulo: 'Promover la identidad',
+    texto: 'Promover el reconocimiento de la identidad de cada persona y la importancia de contar con documentos que acrediten quiénes somos.',
+  },
+  {
+    numero: '04',
+    icon: 'https://stories.freepiklabs.com/storage/14181/Questions-01.svg',
+    titulo: 'Resolver dudas',
+    texto: 'Ayudar a la población a resolver sus dudas y evitar dificultades ocasionadas por el desconocimiento de los procedimientos documentarios.',
+  },
+  {
+    numero: '05',
+    icon: 'https://stories.freepiklabs.com/storage/2226/Agreement-bro-01.svg',
+    titulo: 'Gestión responsable',
+    texto: 'Promover que las personas aprendan a gestionar sus propios documentos de manera responsable, informada e independiente.',
+  },
+  {
+    numero: '06',
+    icon: 'https://stories.freepiklabs.com/storage/39397/Online-document-(1)-01.svg',
+    titulo: 'Facilitar el acceso',
+    texto: 'Facilitar el acceso a información sobre documentación para favorecer el ejercicio de derechos y el acceso a servicios, estudios y oportunidades laborales.',
+  },
+];
+---
+
+<Layout title="Objetivos - Kyara">
+  <PageHeader
+    badge="Nuestra misión"
+    title="¿Qué buscamos con esta guía?"
+    highlight="esta guía?"
+    description="Conoce los objetivos que nos impulsan a crear esta plataforma de orientación ciudadana."
+    backHref="/"
+    backLabel="Inicio"
+  />
+
+  <div class="bg-[#053550] py-16 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {objetivos.map(obj => (
+        <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 group">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="text-[#1BE4BF]/40 font-display font-black text-4xl leading-none select-none">{obj.numero}</span>
+            <img src={obj.icon} alt="" class="w-24 h-24 object-contain" />
+          </div>
+          <h2 class="font-condensed font-bold text-white text-lg mb-2">{obj.titulo}</h2>
+          <div class="w-8 h-0.5 bg-[#1BE4BF]/40 rounded-full mb-3"></div>
+          <p class="text-white/60 text-sm leading-relaxed">{obj.texto}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="max-w-5xl mx-auto mt-12 text-center">
+      <p class="text-white/40 text-sm font-condensed mb-4">¿Listo para comenzar tu trámite?</p>
+      <a href="/guia" class="inline-flex items-center gap-2 bg-[#1BE4BF] text-[#053550] font-condensed font-bold text-sm tracking-wide px-8 py-3 rounded-full hover:bg-[#5AF6B6] transition-all duration-200">
+        Ver guías de documentación
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</Layout>

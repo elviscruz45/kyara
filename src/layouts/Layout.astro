@@ -1,0 +1,38 @@
+---
+import Sidebar from '../components/Sidebar.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+}
+const { title = 'Kyara - Trámites de Documentación' } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Orientación y apoyo en trámites de documentación para un Perú más conectado, informado y con más oportunidades." />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <Sidebar currentPath={currentPath} />
+    <main class="lg:ml-64 pt-16 lg:pt-0 min-h-screen">
+      <slot />
+    </main>
+    <script>
+      const menuBtn = document.getElementById('menu-btn');
+      const sidebar = document.getElementById('sidebar');
+      menuBtn?.addEventListener('click', () => {
+        sidebar?.classList.toggle('-translate-x-full');
+      });
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          sidebar?.classList.add('-translate-x-full');
+        });
+      });
+    </script>
+  </body>
+</html>

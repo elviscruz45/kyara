@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import Footer from '../components/Footer.astro';
+
+const tramites = [
+  { label: 'Renovación de DNI', url: 'https://identidad.reniec.gob.pe/dnid', interno: '/guia/dni' },
+  { label: 'Pasaporte internacional', url: 'https://www.gob.pe/174-sacar-pasaporte-electronico-para-mayores-de-edad', interno: '/guia/pasaporte' },
+  { label: 'Licencia de conducir', url: 'https://licencias-tramite.mtc.gob.pe', interno: '/guia/licencia' },
+  { label: 'Certificado de estudios', url: 'https://certificado.minedu.gob.pe', interno: '/guia/certificado' },
+  { label: 'Partida de nacimiento', url: 'https://apps.reniec.gob.pe/actascertificadas', interno: '/guia/partida' },
+];
+
+const videos = [
+  { label: 'DNI digital – RENIEC', url: 'https://www.youtube.com/watch?v=QJWV39WdlDc' },
+  { label: 'Pasaporte físico – MRE', url: 'https://www.gob.pe/174-sacar-pasaporte-electronico-para-mayores-de-edad' },
+  { label: 'Licencia electrónica – MTC', url: 'https://www.youtube.com/watch?v=15Zt7LFoi8o' },
+  { label: 'Certificado de estudios – MINEDU', url: 'https://www.youtube.com/watch?v=j8jMFV5u-SI' },
+  { label: 'Partida de nacimiento – RENIEC', url: 'https://www.youtube.com/watch?v=QzLpNcNbtdI' },
+];
+---
+
+<Layout title="Fuentes y Links - Kyara">
+  <PageHeader
+    badge="Recursos oficiales"
+    title="Links de orientación"
+    highlight="orientación"
+    description="Accede directamente a las plataformas oficiales del gobierno peruano para realizar tus trámites."
+    backHref="/"
+    backLabel="Inicio"
+  />
+
+  <div class="bg-[#053550] py-16 px-6">
+    <div class="max-w-5xl mx-auto space-y-8">
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Tramites oficiales -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h2 class="font-condensed font-bold text-[#1BE4BF] uppercase tracking-widest text-sm mb-6">
+            Iniciar tu trámite
+          </h2>
+          <div class="space-y-3">
+            {tramites.map(t => (
+              <div class="flex items-center gap-2">
+                <a href={t.url} target="_blank" rel="noopener noreferrer"
+                  class="flex-1 flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-[#1BE4BF]/10 hover:text-[#1BE4BF] transition-all group">
+                  <div class="w-8 h-8 bg-[#1BE4BF]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1BE4BF]/20 transition-colors">
+                    <svg class="w-4 h-4 text-[#1BE4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                    </svg>
+                  </div>
+                  <span class="text-white/70 text-sm group-hover:text-[#1BE4BF] transition-colors flex-1">{t.label}</span>
+                  <svg class="w-4 h-4 text-white/20 group-hover:text-[#1BE4BF] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+                <a href={t.interno} class="p-3 bg-[#1BE4BF]/10 border border-[#1BE4BF]/20 rounded-xl hover:bg-[#1BE4BF]/20 transition-colors" title="Ver guía en Kyara">
+                  <svg class="w-4 h-4 text-[#1BE4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Videos -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <h2 class="font-condensed font-bold text-[#1BE4BF] uppercase tracking-widest text-sm mb-6">
+            Videos tutoriales
+          </h2>
+          <div class="space-y-3">
+            {videos.map(v => (
+              <a href={v.url} target="_blank" rel="noopener noreferrer"
+                class="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-[#1BE4BF]/10 transition-all group">
+                <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-red-500/20 transition-colors">
+                  <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </div>
+                <span class="text-white/70 text-sm group-hover:text-white transition-colors flex-1">{v.label}</span>
+                <svg class="w-4 h-4 text-white/20 group-hover:text-white/60 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Constitución -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-6">
+        <img src="https://stories.freepiklabs.com/storage/2275/Check-List-01.svg" alt="" class="w-32 h-32 object-contain flex-shrink-0" />
+        <div>
+          <p class="text-white/50 font-condensed text-sm uppercase tracking-widest mb-2">Conoce tus derechos en</p>
+          <h3 class="font-display text-xl text-white font-bold mb-4">Constitución Política del Perú</h3>
+          <a href="https://www3.congreso.gob.pe/constitucionyreglamento" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-[#1BE4BF] text-[#053550] font-condensed font-bold text-sm tracking-wide px-6 py-3 rounded-full hover:bg-[#5AF6B6] transition-all duration-200">
+            Ver documento oficial
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DocPage from '../../components/DocPage.astro';
+---
+
+<Layout title="Guía Certificado de Estudios - Kyara">
+  <DocPage
+    numero="04"
+    titulo="Certificado de Estudios"
+    subtitulo="Tramita tu"
+    descripcion="Documento oficial que acredita los grados y años escolares que una persona ha cursado y aprobado. Es importante porque permite demostrar la formación académica y facilita la realización de trámites, como continuar estudiando en otra institución, postular a centros de educación superior o cumplir determinados requisitos laborales."
+    objetivos={[
+      'Acreditar los estudios realizados.',
+      'Verificar la formación académica.',
+      'Facilitar la continuación educativa.',
+    ]}
+    guiaImg="/images/guia-del-certificado-de-estudios.png"
+    docImg="/images/certificado-de-estudios.png"
+    ilustracion="https://stories.freepiklabs.com/storage/36025/Certification-01.svg"
+    link="https://certificado.minedu.gob.pe"
+    linkLabel="Tramitar en MINEDU"
+    importante="Si tu colegio no aparece en la plataforma, comunícate directamente con la institución educativa para solicitar el certificado de manera presencial."
+    consejos={[
+      { titulo: 'Verifica', texto: 'que el nombre de tu colegio sea correcto.' },
+      { titulo: 'Ten a la mano', texto: 'tu DNI y tus datos personales.' },
+      { titulo: 'Ingresa', texto: 'únicamente a la plataforma oficial del MINEDU.' },
+      { titulo: 'Revisa cuidadosamente', texto: 'la información antes de enviar la solicitud.' },
+      { titulo: 'Guarda el certificado', texto: 'digital cuando lo recibas.' },
+    ]}
+  >
+    <div slot="next" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+      <a href="/guia/licencia" class="flex items-center gap-2 text-white/40 text-sm font-condensed hover:text-[#1BE4BF] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Licencia de conducir
+      </a>
+      <a href="/guia/partida" class="flex items-center gap-2 text-[#1BE4BF] text-sm font-condensed font-bold hover:gap-3 transition-all">
+        Partida de nacimiento
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </DocPage>
+</Layout>

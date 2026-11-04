@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+const derechos = [
+  {
+    articulo: 'Art. 2.1',
+    titulo: 'Derecho a la identidad',
+    texto: 'Toda persona tiene derecho a contar con una identidad reconocida legalmente y a acreditar quién es mediante los documentos correspondientes.',
+    icono: 'https://stories.freepiklabs.com/storage/2593/ID-Card-01.svg',
+  },
+  {
+    articulo: 'Art. 2 inc. 1',
+    titulo: 'Derecho a la Documentación',
+    texto: 'Los ciudadanos pueden solicitar los documentos oficiales que necesiten, cumpliendo los requisitos establecidos por la normativa correspondiente.',
+    icono: 'https://stories.freepiklabs.com/storage/39397/Online-document-(1)-01.svg',
+  },
+  {
+    articulo: 'Art. 2.20',
+    titulo: 'Derecho a la petición',
+    texto: 'Toda persona puede presentar solicitudes ante las autoridades competentes y recibir una respuesta conforme la ley.',
+    icono: 'https://stories.freepiklabs.com/storage/2226/Agreement-bro-01.svg',
+  },
+  {
+    articulo: 'Art. 2.2',
+    titulo: 'Derecho a la igualdad',
+    texto: 'Todas las personas deben recibir un trato igualitario y sin discriminación al realizar sus trámites de documentación.',
+    icono: 'https://stories.freepiklabs.com/storage/26391/team-work-01.svg',
+  },
+  {
+    articulo: 'Art. 2.5',
+    titulo: 'Derecho a la información',
+    texto: 'Los ciudadanos pueden informarse sobre los requisitos, costos, plazos y pasos necesarios para efectuar un trámite.',
+    icono: 'https://stories.freepiklabs.com/storage/14181/Questions-01.svg',
+  },
+  {
+    articulo: 'Ley N.° 27444',
+    titulo: 'Derecho a una atención adecuada',
+    texto: 'Las instituciones públicas deben atender a los ciudadanos respetando las normas, los plazos aplicables y los procedimientos establecidos.',
+    icono: 'https://stories.freepiklabs.com/storage/36025/Certification-01.svg',
+  },
+];
+---
+
+<Layout title="Tus Derechos - Kyara">
+  <PageHeader
+    badge="Constitución Política del Perú"
+    title="Conoce tus derechos"
+    highlight="derechos"
+    description="Toda persona tiene derecho a ser reconocida legalmente. Conocer nuestros derechos nos ayuda a realizar trámites y proteger nuestra identidad."
+    backHref="/"
+    backLabel="Inicio"
+  />
+
+  <div class="bg-[#053550] py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- Intro visual -->
+      <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <p class="text-white/60 leading-relaxed mb-6">
+            Conocer tus derechos te permite exigir una atención adecuada, acceder a los documentos que necesitas y hacer valer tu voz ciudadana ante las instituciones del Estado.
+          </p>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3 text-white/60 text-sm">
+              <div class="w-2 h-2 rounded-full bg-[#1BE4BF] flex-shrink-0"></div>
+              Solicitar orientación en las instituciones correspondientes
+            </div>
+            <div class="flex items-center gap-3 text-white/60 text-sm">
+              <div class="w-2 h-2 rounded-full bg-[#1BE4BF] flex-shrink-0"></div>
+              Presentar un reclamo por los canales oficiales
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <img src="https://stories.freepiklabs.com/storage/14185/Security-01.svg" alt="Seguridad ciudadana" class="w-64 object-contain" />
+        </div>
+      </div>
+
+      <!-- Derechos grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {derechos.map(d => (
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-[#1BE4BF]/30 transition-all group">
+            <div class="flex items-center justify-between mb-4">
+              <img src={d.icono} alt="" class="w-20 h-20 object-contain" />
+              <span class="text-[#1BE4BF] text-xs font-condensed font-bold tracking-widest uppercase bg-[#1BE4BF]/10 px-2 py-1 rounded-full text-right">
+                {d.articulo}
+              </span>
+            </div>
+            <h2 class="font-condensed font-bold text-white text-base mb-3">{d.titulo}</h2>
+            <p class="text-white/55 text-sm leading-relaxed italic">"{d.texto}"</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Constitución CTA -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
+        <img src="https://stories.freepiklabs.com/storage/33191/Happy-announcement_Freepik-01.svg" alt="" class="w-32 h-32 object-contain mx-auto mb-4" />
+        <p class="text-white/50 font-condensed text-sm uppercase tracking-widest mb-2">Conoce todos tus derechos en</p>
+        <a href="https://www3.congreso.gob.pe/constitucionyreglamento" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-[#1BE4BF] text-[#053550] font-condensed font-bold text-sm tracking-wide px-6 py-3 rounded-full hover:bg-[#5AF6B6] transition-all duration-200 mt-2">
+          Constitución Política del Perú
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DocPage from '../../components/DocPage.astro';
+---
+
+<Layout title="Guía Licencia de Conducir - Kyara">
+  <DocPage
+    numero="03"
+    titulo="Licencia de Conducir"
+    subtitulo="Tramita tu"
+    descripcion="La licencia de conducir es un documento oficial que autoriza a una persona a manejar vehículos de acuerdo con la categoría correspondiente. En el Perú, para obtenerla es necesario cumplir ciertos requisitos y evaluaciones que comprueben los conocimientos y habilidades del conductor."
+    objetivos={[
+      'Controlar quiénes pueden conducir vehículos.',
+      'Garantizar una conducción responsable y segura.',
+      'Prevenir accidentes de tránsito.',
+    ]}
+    guiaImg="/images/guia-de-licencia-de-conducir.png"
+    docImg="/images/licencia-de-conducir.png"
+    ilustracion="https://stories.freepiklabs.com/storage/6290/City-Driver-01.svg"
+    link="https://licencias-tramite.mtc.gob.pe"
+    linkLabel="Tramitar Licencia en MTC"
+    importante="Verifica la página oficial e ingresa únicamente al portal del MTC: licencias.mtc.gob.pe. Evita tramitadores: no compartas tus contraseñas ni pagues a personas que prometan entregarte una licencia sin cumplir los requisitos."
+    consejos={[
+      { titulo: 'Ten tus datos a la mano', texto: 'DNI vigente, correo electrónico y acceso a tu casilla electrónica del MTC.' },
+      { titulo: 'Revisa tus requisitos', texto: 'Debes haber aprobado los exámenes y no tener multas pendientes.' },
+      { titulo: 'Realiza el pago correcto', texto: 'Verifica el importe y el código de pago indicados en el portal oficial.' },
+      { titulo: 'Guarda tu comprobante', texto: 'Conserva el recibo de pago y las notificaciones que recibas.' },
+      { titulo: 'Descarga tu licencia', texto: 'Guarda el archivo PDF y comprueba que el código QR sea legible.' },
+    ]}
+  >
+    <div slot="next" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+      <a href="/guia/pasaporte" class="flex items-center gap-2 text-white/40 text-sm font-condensed hover:text-[#1BE4BF] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Pasaporte
+      </a>
+      <a href="/guia/certificado" class="flex items-center gap-2 text-[#1BE4BF] text-sm font-condensed font-bold hover:gap-3 transition-all">
+        Certificado de estudios
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </DocPage>
+</Layout>

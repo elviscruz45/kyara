@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DocPage from '../../components/DocPage.astro';
+---
+
+<Layout title="Guía Pasaporte - Kyara">
+  <DocPage
+    numero="02"
+    titulo="Pasaporte Internacional"
+    subtitulo="Tramita tu"
+    descripcion="El pasaporte es un documento oficial de identificación y viaje que permite a los ciudadanos peruanos acreditar su identidad y nacionalidad cuando viajan al extranjero. Es fundamental para realizar viajes internacionales, conocer nuevas culturas, estudiar, trabajar o visitar a familiares en otros países."
+    objetivos={[
+      'Identificar al viajero.',
+      'Controlar el ingreso entre países.',
+      'Facilitar viajes internacionales.',
+    ]}
+    guiaImg="/images/guia-del-pasaporte.png"
+    docImg="/images/pasaporte-.png"
+    ilustracion="https://stories.freepiklabs.com/storage/32029/Traveling-bro-01.svg"
+    link="https://www.gob.pe/174-sacar-pasaporte-electronico-para-mayores-de-edad"
+    linkLabel="Tramitar Pasaporte"
+    importante="Puedes hacer parte del proceso digitalmente, pero para obtener el documento tendrás que acudir personalmente a la sede que elegiste. Solo para MAYORES DE 18 años."
+    consejos={[
+      { titulo: 'Revisa tus datos', texto: 'Comprueba que toda la información sea correcta.' },
+      { titulo: 'Confirma el pago', texto: 'Verifica el monto y guarda tu comprobante.' },
+      { titulo: 'Protege tus datos', texto: 'No compartas información personal con desconocidos.' },
+      { titulo: 'Usa páginas oficiales', texto: 'Evita estafas y enlaces sospechosos.' },
+      { titulo: 'Guarda tus constancias', texto: 'Conserva los comprobantes y confirmaciones.' },
+      { titulo: 'Infórmate sobre tu destino', texto: 'Verifica si necesitas visa u otros documentos para viajar.' },
+    ]}
+  >
+    <div slot="next" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+      <a href="/guia/dni" class="flex items-center gap-2 text-white/40 text-sm font-condensed hover:text-[#1BE4BF] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        DNI
+      </a>
+      <a href="/guia/licencia" class="flex items-center gap-2 text-[#1BE4BF] text-sm font-condensed font-bold hover:gap-3 transition-all">
+        Licencia de conducir
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </DocPage>
+</Layout>

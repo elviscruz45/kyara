@@ -1,0 +1,55 @@
+---
+const objetivos = [
+  {
+    icon: 'https://stories.freepiklabs.com/storage/34149/learning-01.svg',
+    text: 'Orientar a todas las personas sobre los documentos de identidad y los requisitos necesarios para obtenerlos o renovarlos.',
+  },
+  {
+    icon: 'https://stories.freepiklabs.com/storage/2275/Check-List-01.svg',
+    text: 'Explicar paso a paso cómo realizar los trámites, para que las personas puedan hacerlos con mayor facilidad, seguridad y confianza.',
+  },
+  {
+    icon: 'https://stories.freepiklabs.com/storage/2593/ID-Card-01.svg',
+    text: 'Promover el reconocimiento de la identidad de cada persona y la importancia de contar con documentos que acrediten quiénes somos.',
+  },
+  {
+    icon: 'https://stories.freepiklabs.com/storage/14181/Questions-01.svg',
+    text: 'Ayudar a la población a resolver sus dudas y evitar dificultades ocasionadas por el desconocimiento de los procedimientos documentarios.',
+  },
+  {
+    icon: 'https://stories.freepiklabs.com/storage/2226/Agreement-bro-01.svg',
+    text: 'Promover que las personas aprendan a gestionar sus propios documentos de manera responsable, informada e independiente.',
+  },
+  {
+    icon: 'https://stories.freepiklabs.com/storage/39397/Online-document-(1)-01.svg',
+    text: 'Facilitar el acceso a información sobre documentación para favorecer el ejercicio de derechos y el acceso a servicios, estudios y oportunidades laborales.',
+  },
+];
+---
+
+<section id="objetivos" class="relative py-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#042940] to-[#053550]"></div>
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#0B908C]/15 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="section-badge">Nuestra misión</span>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">
+        ¿Qué buscamos con<br/>
+        <span class="text-[#1BE4BF]">esta guía de apoyo?</span>
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {objetivos.map((obj, i) => (
+        <div class="card group">
+          <div class="w-24 h-24 mb-4 flex items-center justify-center">
+            <img src={obj.icon} alt="" class="w-24 h-24 object-contain" />
+          </div>
+          <div class="w-6 h-0.5 bg-[#1BE4BF]/50 mb-3 rounded-full"></div>
+          <p class="text-white/70 text-sm leading-relaxed">{obj.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

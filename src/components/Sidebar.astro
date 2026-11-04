@@ -1,0 +1,94 @@
+---
+interface Props {
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/objetivos', label: 'Objetivos' },
+  {
+    href: '/guia',
+    label: 'Guía y orientación',
+    children: [
+      { href: '/guia/dni', label: 'DNI' },
+      { href: '/guia/pasaporte', label: 'Pasaporte' },
+      { href: '/guia/licencia', label: 'Licencia de conducir' },
+      { href: '/guia/certificado', label: 'Certificado de estudios' },
+      { href: '/guia/partida', label: 'Partida de nacimiento' },
+    ],
+  },
+  { href: '/derechos', label: 'Tus derechos' },
+  { href: '/fuentes', label: 'Fuentes' },
+];
+
+function isActive(href: string) {
+  if (href === '/') return currentPath === '/';
+  return currentPath === href || currentPath.startsWith(href + '/');
+}
+---
+
+<!-- Mobile top bar -->
+<header class="lg:hidden fixed top-0 left-0 right-0 z-50 bg-[#053550]/95 backdrop-blur border-b border-[#1BE4BF]/20 flex items-center justify-between px-4 py-3">
+  <a href="/" class="font-script text-[#1BE4BF] text-xl">Kyara</a>
+  <button id="menu-btn" class="text-white p-2" aria-label="Abrir menú">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
+  </button>
+</header>
+
+<!-- Sidebar -->
+<aside
+  id="sidebar"
+  class="fixed top-0 left-0 h-full w-64 bg-[#042940] border-r border-[#1BE4BF]/10 flex flex-col z-40
+         -translate-x-full lg:translate-x-0 transition-transform duration-300"
+>
+  <!-- Logo -->
+  <div class="p-6 border-b border-[#1BE4BF]/10">
+    <a href="/" class="block">
+      <p class="font-script text-[#1BE4BF] text-3xl leading-none">Kyara</p>
+      <p class="font-condensed text-[10px] tracking-widest text-white/50 uppercase mt-1">Trámites de Documentación</p>
+    </a>
+  </div>
+
+  <!-- Nav -->
+  <nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
+    {navItems.map(item => (
+      item.children ? (
+        <div>
+          <a
+            href={item.href}
+            class={`nav-link ${isActive(item.href) ? 'text-[#1BE4BF]' : 'text-white/70'}`}
+          >
+            {item.label}
+          </a>
+          <div class="ml-3 mt-1 space-y-0.5 border-l border-[#1BE4BF]/20 pl-3">
+            {item.children.map(child => (
+              <a
+                href={child.href}
+                class={`nav-link text-xs py-1.5 ${isActive(child.href) ? 'active text-[#1BE4BF]' : 'text-white/50'}`}
+              >
+                {child.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <a
+          href={item.href}
+          class={`nav-link ${isActive(item.href) ? 'active text-[#1BE4BF]' : 'text-white/70'}`}
+        >
+          {item.label}
+        </a>
+      )
+    ))}
+  </nav>
+
+  <!-- Footer nav -->
+  <div class="p-4 border-t border-[#1BE4BF]/10">
+    <p class="text-[10px] text-white/30 text-center font-condensed tracking-wider">
+      Un compromiso con el Perú 🇵🇪
+    </p>
+  </div>
+</aside>

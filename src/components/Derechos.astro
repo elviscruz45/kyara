@@ -1,0 +1,107 @@
+---
+const derechos = [
+  {
+    articulo: 'Art. 2.1',
+    titulo: 'Derecho a la identidad',
+    texto: 'Toda persona tiene derecho a contar con una identidad reconocida legalmente y a acreditar quién es mediante los documentos correspondientes.',
+    icono: 'https://stories.freepiklabs.com/storage/2593/ID-Card-01.svg',
+  },
+  {
+    articulo: 'Art. 2 inc. 1',
+    titulo: 'Derecho a la Documentación',
+    texto: 'Los ciudadanos pueden solicitar los documentos oficiales que necesiten, cumpliendo los requisitos establecidos por la normativa correspondiente.',
+    icono: 'https://stories.freepiklabs.com/storage/39397/Online-document-(1)-01.svg',
+  },
+  {
+    articulo: 'Art. 2.20',
+    titulo: 'Derecho a la petición',
+    texto: 'Toda persona puede presentar solicitudes ante las autoridades competentes y recibir una respuesta conforme la ley.',
+    icono: 'https://stories.freepiklabs.com/storage/2226/Agreement-bro-01.svg',
+  },
+  {
+    articulo: 'Art. 2.2',
+    titulo: 'Derecho a la igualdad',
+    texto: 'Todas las personas deben recibir un trato igualitario y sin discriminación al realizar sus trámites de documentación.',
+    icono: 'https://stories.freepiklabs.com/storage/26391/team-work-01.svg',
+  },
+  {
+    articulo: 'Art. 2.5',
+    titulo: 'Derecho a la información',
+    texto: 'Los ciudadanos pueden informarse sobre los requisitos, costos, plazos y pasos necesarios para efectuar un trámite.',
+    icono: 'https://stories.freepiklabs.com/storage/14181/Questions-01.svg',
+  },
+  {
+    articulo: 'Ley N.° 27444',
+    titulo: 'Derecho a una atención adecuada',
+    texto: 'Las instituciones públicas deben atender a los ciudadanos respetando las normas, los plazos aplicables y los procedimientos establecidos.',
+    icono: 'https://stories.freepiklabs.com/storage/36025/Certification-01.svg',
+  },
+];
+---
+
+<section id="derechos" class="relative py-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#042940] to-[#053550]"></div>
+  <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[600px] h-64 bg-[#1BE4BF]/5 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <!-- Header -->
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+        <span class="section-badge">Constitución Política del Perú</span>
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">
+          Conoce tus <span class="text-[#1BE4BF]">derechos</span>
+        </h2>
+        <p class="text-white/60 leading-relaxed">
+          Toda persona tiene derecho a ser reconocida legalmente. Conocer nuestros derechos nos ayuda a realizar trámites y proteger nuestra identidad.
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-[#1BE4BF]/10 rounded-full blur-2xl"></div>
+          <img src="https://stories.freepiklabs.com/storage/14185/Security-01.svg" alt="Seguridad ciudadana" class="relative z-10 w-64 object-contain" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Rights grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      {derechos.map(d => (
+        <div class="card group hover:border-[#1BE4BF]/30 transition-all">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-20 h-20 flex items-center justify-center flex-shrink-0">
+              <img src={d.icono} alt="" class="w-20 h-20 object-contain" />
+            </div>
+            <span class="text-[#1BE4BF] text-xs font-condensed font-bold tracking-widest uppercase mt-1 bg-[#1BE4BF]/10 px-2 py-0.5 rounded-full">
+              {d.articulo}
+            </span>
+          </div>
+          <h3 class="font-condensed font-bold text-white text-base mb-2">{d.titulo}</h3>
+          <p class="text-white/55 text-sm leading-relaxed italic">"{d.texto}"</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="card text-center py-8">
+      <p class="font-condensed text-white/50 text-sm mb-3 uppercase tracking-widest">¿Qué puedes hacer si no respetan tus derechos?</p>
+      <div class="flex flex-wrap justify-center gap-4 text-white/70 text-sm">
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[#1BE4BF]"></div>
+          Solicitar orientación en las instituciones correspondientes
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-2 h-2 rounded-full bg-[#1BE4BF]"></div>
+          Presentar un reclamo por los canales oficiales
+        </div>
+      </div>
+      <div class="mt-6">
+        <a href="https://www3.congreso.gob.pe/constitucionyreglamento" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Ver Constitución Política del Perú
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

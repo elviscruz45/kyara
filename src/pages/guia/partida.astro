@@ -1,0 +1,46 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DocPage from '../../components/DocPage.astro';
+---
+
+<Layout title="Guía Partida de Nacimiento - Kyara">
+  <DocPage
+    numero="05"
+    titulo="Partida de Nacimiento"
+    subtitulo="Tramita tu"
+    descripcion="Documento oficial que acredita el nacimiento de una persona y registra datos importantes como nombres, apellidos, fecha y lugar de nacimiento, así como la información de sus padres. Es fundamental porque permite establecer legalmente nuestra identidad y facilita el acceso a derechos y servicios como la educación y la salud."
+    objetivos={[
+      'Registrar el nacimiento.',
+      'Garantizar derechos.',
+      'Reconocer la identidad.',
+    ]}
+    guiaImg="/images/guia-de-partida-de-nacimiento.png"
+    docImg="/images/partida-de-nacimiento.png"
+    ilustracion="https://stories.freepiklabs.com/storage/33191/Happy-announcement_Freepik-01.svg"
+    link="https://apps.reniec.gob.pe/actascertificadas"
+    linkLabel="Tramitar en RENIEC"
+    importante="Si no aparece tu acta, consulta con la municipalidad correspondiente. Si eres menor de edad, la solicitud digital debe realizarla uno de tus padres con su DNI."
+    consejos={[
+      { titulo: 'Utiliza', texto: 'una conexión segura a internet.' },
+      { titulo: 'Comprueba', texto: 'que tus nombres estén escritos correctamente.' },
+      { titulo: 'Verifica', texto: 'el costo del trámite antes de pagar.' },
+      { titulo: 'No compartas', texto: 'tus datos personales con desconocidos.' },
+      { titulo: 'Guarda', texto: 'una copia digital de tu partida.' },
+    ]}
+  >
+    <div slot="next" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+      <a href="/guia/certificado" class="flex items-center gap-2 text-white/40 text-sm font-condensed hover:text-[#1BE4BF] transition-colors">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Certificado de estudios
+      </a>
+      <a href="/derechos" class="flex items-center gap-2 text-[#1BE4BF] text-sm font-condensed font-bold hover:gap-3 transition-all">
+        Tus derechos
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </DocPage>
+</Layout>

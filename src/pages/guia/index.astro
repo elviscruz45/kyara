@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+
+const documentos = [
+  {
+    href: '/guia/dni',
+    numero: '01',
+    label: 'DNI',
+    sublabel: 'Documento Nacional de Identidad',
+    descripcion: 'Acredita tu identidad ante cualquier institución del Perú.',
+    img: '/images/dni.png',
+    ilustracion: 'https://stories.freepiklabs.com/storage/2593/ID-Card-01.svg',
+  },
+  {
+    href: '/guia/pasaporte',
+    numero: '02',
+    label: 'Pasaporte',
+    sublabel: 'Pasaporte internacional',
+    descripcion: 'Viaja al extranjero con tu documento oficial de viaje.',
+    img: '/images/pasaporte-.png',
+    ilustracion: 'https://stories.freepiklabs.com/storage/32029/Traveling-bro-01.svg',
+  },
+  {
+    href: '/guia/licencia',
+    numero: '03',
+    label: 'Licencia de conducir',
+    sublabel: 'Permiso de conducir – MTC',
+    descripcion: 'Autorización oficial para manejar vehículos en el Perú.',
+    img: '/images/licencia-de-conducir.png',
+    ilustracion: 'https://stories.freepiklabs.com/storage/6290/City-Driver-01.svg',
+  },
+  {
+    href: '/guia/certificado',
+    numero: '04',
+    label: 'Certificado de estudios',
+    sublabel: 'Documento educativo – MINEDU',
+    descripcion: 'Acredita tus años y grados escolares aprobados.',
+    img: '/images/certificado-de-estudios.png',
+    ilustracion: 'https://stories.freepiklabs.com/storage/36025/Certification-01.svg',
+  },
+  {
+    href: '/guia/partida',
+    numero: '05',
+    label: 'Partida de nacimiento',
+    sublabel: 'Registro civil – RENIEC',
+    descripcion: 'Establece legalmente tu identidad desde el nacimiento.',
+    img: '/images/partida-de-nacimiento.png',
+    ilustracion: 'https://stories.freepiklabs.com/storage/26391/team-work-01.svg',
+  },
+];
+---
+
+<Layout title="Guía de Trámites - Kyara">
+  <PageHeader
+    badge="Guías"
+    title="Guía y orientación"
+    highlight="orientación"
+    description="Selecciona el documento que necesitas tramitar y te guiaremos paso a paso con los requisitos, consejos y links oficiales."
+    backHref="/"
+    backLabel="Inicio"
+  />
+
+  <div class="bg-[#053550] py-16 px-6">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {documentos.map(doc => (
+        <a
+          href={doc.href}
+          class="group relative overflow-hidden bg-gradient-to-br from-[#0B908C]/30 to-[#005B64]/30 border border-[#1BE4BF]/15 rounded-2xl p-6 hover:border-[#1BE4BF]/50 hover:from-[#0B908C]/50 transition-all duration-300"
+        >
+          <!-- Numero decorativo -->
+          <span class="absolute top-4 right-4 text-[#1BE4BF]/10 font-display font-black text-6xl leading-none select-none group-hover:text-[#1BE4BF]/20 transition-colors">
+            {doc.numero}
+          </span>
+
+          <!-- Ilustración -->
+          <div class="mb-4 flex justify-center">
+            <img src={doc.ilustracion} alt={doc.label} class="w-36 h-36 object-contain group-hover:scale-105 transition-transform duration-300" />
+          </div>
+
+          <!-- Miniatura del documento real -->
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <img src={doc.img} alt="" class="w-9 h-9 object-contain" />
+            </div>
+            <div>
+              <h2 class="font-condensed font-bold text-white text-base leading-tight">{doc.label}</h2>
+              <p class="text-white/40 text-xs">{doc.sublabel}</p>
+            </div>
+          </div>
+
+          <p class="text-white/55 text-sm leading-relaxed mb-4">{doc.descripcion}</p>
+
+          <div class="flex items-center gap-2 text-[#1BE4BF] text-xs font-condensed font-bold tracking-wide">
+            Ver guía completa
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

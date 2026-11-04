@@ -1,0 +1,57 @@
+---
+---
+<section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
+  <!-- Background shapes -->
+  <div class="absolute inset-0 bg-gradient-to-br from-[#053550] via-[#053D5E] to-[#042940]"></div>
+  <div class="absolute -left-32 -bottom-32 w-[500px] h-[500px] bg-gradient-to-tr from-[#5AF6B6] via-[#1BE4BF] to-[#0B908C] rounded-full opacity-20 blur-3xl"></div>
+  <div class="absolute right-0 top-0 w-[400px] h-[400px] bg-[#0B908C] opacity-10 rounded-full blur-2xl"></div>
+
+  <!-- Parallelogram accent top-right -->
+  <div class="absolute top-0 right-0 w-1/2 h-full bg-[#0B908C]/10 skew-x-6 origin-top-right hidden lg:block"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center pt-20 lg:pt-0">
+    <!-- Text -->
+    <div>
+      <span class="section-badge">Guía ciudadana · Perú</span>
+      <p class="font-script text-[#1BE4BF] text-3xl mb-2">Trámites de</p>
+      <h1 class="font-display text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
+        Documentación
+      </h1>
+      <p class="text-white/70 text-lg leading-relaxed max-w-md mb-8">
+        Orientación y apoyo en trámites de documentación por medio digital, para un Perú más conectado, informado y con más oportunidades.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#guia" class="btn-primary">
+          Ver guías
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+        <a href="#objetivos" class="inline-flex items-center gap-2 border border-[#1BE4BF]/40 text-[#1BE4BF] font-condensed font-bold text-sm tracking-wide px-6 py-3 rounded-full hover:bg-[#1BE4BF]/10 transition-all duration-200">
+          Conocer más
+        </a>
+      </div>
+    </div>
+
+    <!-- Image -->
+    <div class="relative flex justify-center">
+      <div class="relative">
+        <!-- Mint circle behind image -->
+        <div class="absolute -inset-6 bg-gradient-to-tr from-[#5AF6B6]/30 via-[#1BE4BF]/20 to-transparent rounded-full blur-2xl"></div>
+        <img
+          src="https://stories.freepiklabs.com/storage/15428/Woman-Bro-01.svg"
+          alt="Persona realizando sus trámites"
+          class="relative z-10 w-72 lg:w-96 object-contain drop-shadow-2xl"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce">
+    <span class="text-xs font-condensed tracking-widest uppercase">Scroll</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </div>
+</section>

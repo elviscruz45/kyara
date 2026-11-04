@@ -1,0 +1,97 @@
+---
+const tramites = [
+  { label: 'Renovación de DNI', url: 'https://identidad.reniec.gob.pe/dnid' },
+  { label: 'Pasaporte internacional', url: 'https://www.gob.pe/174-sacar-pasaporte-electronico-para-mayores-de-edad' },
+  { label: 'Licencia de conducir', url: 'https://licencias-tramite.mtc.gob.pe' },
+  { label: 'Certificado de estudios', url: 'https://certificado.minedu.gob.pe' },
+  { label: 'Partida de nacimiento', url: 'https://apps.reniec.gob.pe/actascertificadas' },
+];
+
+const videos = [
+  { label: 'DNI digital – RENIEC', url: 'https://www.youtube.com/watch?v=QJWV39WdlDc' },
+  { label: 'Pasaporte físico – MRE', url: 'https://www.gob.pe/174-sacar-pasaporte-electronico-para-mayores-de-edad' },
+  { label: 'Licencia electrónica – MTC', url: 'https://www.youtube.com/watch?v=15Zt7LFoi8o' },
+  { label: 'Certificado de estudios – MINEDU', url: 'https://www.youtube.com/watch?v=j8jMFV5u-SI' },
+  { label: 'Partida de nacimiento – RENIEC', url: 'https://www.youtube.com/watch?v=QzLpNcNbtdI' },
+];
+---
+
+<section id="fuentes" class="relative py-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 bg-[#042940]"></div>
+  <div class="absolute right-0 bottom-0 w-96 h-96 bg-[#0B908C]/15 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="section-badge">Recursos oficiales</span>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">
+        Links de <span class="text-[#1BE4BF]">orientación</span>
+      </h2>
+      <p class="text-white/60">Accede directamente a las plataformas oficiales del gobierno peruano.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+      <!-- Tramites -->
+      <div class="card">
+        <h3 class="font-condensed font-bold text-[#1BE4BF] uppercase tracking-widest text-sm mb-6">
+          Iniciar tu trámite
+        </h3>
+        <div class="space-y-3">
+          {tramites.map(t => (
+            <a
+              href={t.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-[#1BE4BF]/10 hover:text-[#1BE4BF] transition-all group"
+            >
+              <div class="w-8 h-8 bg-[#1BE4BF]/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-[#1BE4BF]/20 transition-colors">
+                <svg class="w-4 h-4 text-[#1BE4BF]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                </svg>
+              </div>
+              <span class="text-white/70 text-sm group-hover:text-[#1BE4BF] transition-colors flex-1">{t.label}</span>
+              <svg class="w-4 h-4 text-white/20 group-hover:text-[#1BE4BF] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Videos -->
+      <div class="card">
+        <h3 class="font-condensed font-bold text-[#1BE4BF] uppercase tracking-widest text-sm mb-6">
+          Videos tutoriales
+        </h3>
+        <div class="space-y-3">
+          {videos.map(v => (
+            <a
+              href={v.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-3 p-3 bg-white/5 rounded-xl hover:bg-[#1BE4BF]/10 transition-all group"
+            >
+              <div class="w-8 h-8 bg-red-500/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-red-500/20 transition-colors">
+                <svg class="w-4 h-4 text-red-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </div>
+              <span class="text-white/70 text-sm group-hover:text-white transition-colors flex-1">{v.label}</span>
+              <svg class="w-4 h-4 text-white/20 group-hover:text-white/60 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Constitución -->
+    <div class="card text-center">
+      <img src="https://stories.freepiklabs.com/storage/33191/Happy-announcement_Freepik-01.svg" alt="" class="w-32 h-32 object-contain mx-auto mb-4" />
+      <p class="text-white/50 font-condensed text-sm uppercase tracking-widest mb-3">Conoce tus derechos en</p>
+      <a href="https://www3.congreso.gob.pe/constitucionyreglamento" target="_blank" rel="noopener noreferrer" class="btn-primary mx-auto">
+        Constitución Política del Perú
+      </a>
+    </div>
+  </div>
+</section>

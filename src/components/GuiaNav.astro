@@ -1,0 +1,84 @@
+---
+const documentos = [
+  {
+    href: '#dni',
+    label: 'DNI',
+    sublabel: 'Documento Nacional de Identidad',
+    img: '/images/dni.png',
+    color: 'from-teal-700/40 to-teal-900/40',
+  },
+  {
+    href: '#pasaporte',
+    label: 'Pasaporte',
+    sublabel: 'Pasaporte internacional',
+    img: '/images/pasaporte-.png',
+    color: 'from-blue-700/40 to-blue-900/40',
+  },
+  {
+    href: '#licencia',
+    label: 'Licencia de conducir',
+    sublabel: 'Permiso de conducir',
+    img: '/images/licencia-de-conducir.png',
+    color: 'from-emerald-700/40 to-emerald-900/40',
+  },
+  {
+    href: '#certificado',
+    label: 'Certificado de estudios',
+    sublabel: 'Documento educativo',
+    img: '/images/certificado-de-estudios.png',
+    color: 'from-cyan-700/40 to-cyan-900/40',
+  },
+  {
+    href: '#partida',
+    label: 'Partida de nacimiento',
+    sublabel: 'Registro civil',
+    img: '/images/partida-de-nacimiento.png',
+    color: 'from-green-700/40 to-green-900/40',
+  },
+];
+---
+
+<section id="guia" class="relative py-24 px-6 overflow-hidden">
+  <div class="absolute inset-0 bg-[#053550]"></div>
+  <div class="absolute left-0 top-0 w-80 h-80 bg-[#1BE4BF]/5 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <span class="section-badge">Guías</span>
+      <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">
+        Guía y <span class="text-[#1BE4BF]">orientación</span>
+      </h2>
+      <p class="text-white/60 max-w-xl mx-auto">
+        Selecciona el documento que necesitas tramitar y te guiaremos paso a paso.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {documentos.map(doc => (
+        <a href={doc.href} class="doc-card group">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0">
+              <img src={doc.img} alt={doc.label} class="w-12 h-12 object-contain group-hover:scale-110 transition-transform duration-300" />
+            </div>
+            <div>
+              <h3 class="font-condensed font-bold text-white text-base leading-tight">{doc.label}</h3>
+              <p class="text-white/40 text-xs mt-0.5">{doc.sublabel}</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-[#1BE4BF] text-xs font-condensed font-semibold tracking-wide">
+            Ver guía
+            <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+      ))}
+
+      <!-- Illustration card -->
+      <div class="doc-card flex flex-col items-center justify-center text-center py-10 border-dashed">
+        <img src="/images/compromiso-con-los-documentos-removebg-preview.png" alt="" class="w-24 opacity-50 mb-3" />
+        <p class="text-white/30 text-sm font-condensed">Más documentos<br/>próximamente</p>
+      </div>
+    </div>
+  </div>
+</section>

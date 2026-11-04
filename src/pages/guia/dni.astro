@@ -1,0 +1,42 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DocPage from '../../components/DocPage.astro';
+---
+
+<Layout title="Guía DNI - Kyara">
+  <DocPage
+    numero="01"
+    titulo="Documento Nacional de Identidad"
+    subtitulo="Tramita o renueva tu"
+    descripcion="El Documento Nacional de Identidad (DNI) es el documento oficial que acredita la identidad de una persona en el Perú. Es emitido por el Registro Nacional de Identificación y Estado Civil (RENIEC), institución pública encargada de organizar y mantener actualizado el registro de identificación de los ciudadanos."
+    objetivos={[
+      'Promover el derecho identitario.',
+      'Fomentar autonomía ciudadana.',
+      'Facilitar trámites documentarios.',
+    ]}
+    guiaImg="/images/guia-del-dni.png"
+    docImg="/images/dni.png"
+    ilustracion="https://stories.freepiklabs.com/storage/2593/ID-Card-01.svg"
+    link="https://identidad.reniec.gob.pe/dnid"
+    linkLabel="Tramitar DNI en RENIEC"
+    importante="La renovación virtual está disponible para mayores de edad que cumplen los requisitos. Si tienes un DNI de menor de edad, debes consultar el procedimiento presencial correspondiente."
+    consejos={[
+      { titulo: 'Verifica', texto: 'tu fecha de vencimiento antes de iniciar el trámite.' },
+      { titulo: 'Realiza', texto: 'el pago correcto según el tipo de DNI que tengas.' },
+      { titulo: 'Descarga', texto: 'la aplicación oficial DNI BioFacial 3.0 desde una tienda de aplicaciones.' },
+      { titulo: 'Busca', texto: 'un lugar bien iluminado para realizar la captura de tu fotografía facial.' },
+      { titulo: 'Revisa', texto: 'tus datos personales antes de enviar la solicitud.' },
+      { titulo: 'Acude', texto: 'a recoger tu DNI cuando el sistema indique que está al 100%.' },
+    ]}
+  >
+    <div slot="next" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+      <span class="text-white/40 text-xs font-condensed uppercase tracking-wide">Siguiente guía</span>
+      <a href="/guia/pasaporte" class="flex items-center gap-2 text-[#1BE4BF] text-sm font-condensed font-bold hover:gap-3 transition-all">
+        Pasaporte
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </DocPage>
+</Layout>
